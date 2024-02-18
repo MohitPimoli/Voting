@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
-import styles from './loginpagestyles';
+import './LoginPage.css';
 
 export default function LoginPage() {
   const history = useHistory();
@@ -28,31 +28,31 @@ export default function LoginPage() {
   };
 
   return (
-    <div style={styles.container}>
-      <h1 style={styles.title}>Login</h1>
-      <form onSubmit={handleSubmit} style={styles.form}>
-        <label htmlFor="email" style={styles.label}>Email:</label>
+    <div className="login-page">
+      <h1>Login</h1>
+      <form onSubmit={handleSubmit}>
+        <label htmlFor="email">Email:</label>
         <input
           type="email"
           id="email"
           name="email"
           value={email}
           onChange={(event) => setEmail(event.target.value)}
-          style={styles.input}
         />
-        <label htmlFor="password" style={styles.label}>Password:</label>
+        <br />
+        <label htmlFor="password">Password:</label>
         <input
           type="password"
           id="password"
           name="password"
           value={password}
           onChange={(event) => setPassword(event.target.value)}
-          style={styles.input}
         />
-        <button type="submit" style={styles.button}>Login</button>
+        <br />
+        <button type="submit">Login</button>
       </form>
-      <p style={styles.text}>
-        Don't have an account? <Link to="/Registration" style={styles.link}>Register here</Link>
+      <p>
+        Don't have an account? <Link to="/Registration">Register here</Link>
       </p>
     </div>
   );
