@@ -18,7 +18,7 @@ export default function LoginPage() {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    if (email === "mohitpimoli31@gmail.com" && password === "MyPassWord") {
+    if ((email === "mohitpimoli31@gmail.com" && password === "MyPassWord") || (email === "nb9690@gmail.com" && password === "MyPassWord123")) {
       // If login is successful, redirect to admin page
       setRedirect(true);
     } else {
