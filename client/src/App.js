@@ -1,10 +1,8 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-
 import Home from "./component/Home";
+import UserHome from "./component/UserHome";
 import LoginPage from './component/LoginPage/login';
-
-
 import Voting from "./component/Voting/Voting";
 import Results from "./component/Results/Results";
 import Registration from "./component/Registration/Registration";
@@ -21,7 +19,9 @@ export default class App extends Component {
       <div className="App">
         <Router>
           <Switch>
-            <Route exact path="/" component={LoginPage} />//Login Page Has Been added
+            <Route exact path="/" component={LoginPage} />
+            <Route exact path="/user" component={UserHome} />
+            <Route exact path="/admin" component={Home} />
             <Route exact path="/AddCandidate" component={AddCandidate} />
             <Route exact path="/Voting" component={Voting} />
             <Route exact path="/Results" component={Results} />
